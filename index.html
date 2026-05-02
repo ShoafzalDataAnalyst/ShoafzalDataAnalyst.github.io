@@ -30,7 +30,7 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
 }
-
+ 
 /* NAV */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
@@ -44,7 +44,7 @@ nav {
 .nav-links { display: flex; gap: 2rem; list-style: none; }
 .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--ink3); text-decoration: none; letter-spacing: 0.02em; transition: color .2s; }
 .nav-links a:hover { color: var(--accent); }
-
+ 
 /* HERO */
 .hero {
   min-height: 100vh;
@@ -110,7 +110,7 @@ nav {
   line-height: 1;
 }
 .hero-stat-label { font-size: 0.8rem; color: var(--ink3); margin-top: 2px; }
-
+ 
 /* SECTION BASE */
 section { padding: 6rem 2.5rem; }
 .container { max-width: 1100px; margin: 0 auto; }
@@ -125,33 +125,29 @@ section { padding: 6rem 2.5rem; }
   color: var(--ink); margin-bottom: 0.5rem; line-height: 1.15;
 }
 .section-sub { font-size: 1rem; color: var(--ink3); margin-bottom: 3rem; }
-
-/* ABOUT SECTION - Updated for New Layout */
+ 
+/* ABOUT SECTION */
 #about { background: var(--paper2); }
 .about-grid { 
   display: grid; 
-  /* Define named areas: photo spans top two columns */
   grid-template-areas: 
     "photo photo"
     "text facts";
-  grid-template-columns: 1.2fr 1fr; /* Two main vertical sections for the bottom */
+  grid-template-columns: 1.2fr 1fr;
   gap: 3rem; 
   align-items: start; 
 }
-
-/* Define which div goes to which named area */
 .about-photo-block { grid-area: photo; }
 .about-text-block { grid-area: text; }
 .about-facts-block { grid-area: facts; }
-
-/* Styling for Photo Area (Top Middle) */
+ 
 .about-photo-block { 
   display: flex; 
   flex-direction: column; 
-  align-items: center; /* Center horizontally */
+  align-items: center;
   justify-content: center;
   gap: 1rem; 
-  padding-bottom: 2rem; /* Add some spacing above the text/facts */
+  padding-bottom: 2rem;
 }
 .about-photo-block img { 
   width: 240px; height: 280px; 
@@ -161,12 +157,10 @@ section { padding: 6rem 2.5rem; }
 }
 .about-photo-name { font-family: var(--serif); font-size: 1.3rem; color: var(--ink); text-align: center;}
 .about-photo-title { font-size: 0.9rem; color: var(--accent); font-weight: 500; margin-top: -8px; text-align: center;}
-
-/* Styling for Text Area (Bottom Left) */
+ 
 .about-text-block p { font-size: 1rem; color: var(--ink2); line-height: 1.8; margin-bottom: 1.25rem; }
 .about-text-block p:last-child { margin-bottom: 0; }
-
-/* Styling for Facts Area (Bottom Right) */
+ 
 .about-facts-block { display: flex; flex-direction: column; gap: 1rem; }
 .fact {
   display: flex; align-items: flex-start; gap: 1rem;
@@ -181,7 +175,7 @@ section { padding: 6rem 2.5rem; }
 }
 .fact-label { font-size: 0.75rem; color: var(--ink3); margin-bottom: 2px; }
 .fact-value { font-size: 0.9rem; font-weight: 500; color: var(--ink); }
-
+ 
 /* PROJECTS */
 .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
 .project-card {
@@ -224,7 +218,7 @@ section { padding: 6rem 2.5rem; }
 .proj-link-primary:hover { background: #1448c0; }
 .proj-link-ghost { border: 1.5px solid var(--line); color: var(--ink2); }
 .proj-link-ghost:hover { border-color: var(--ink2); background: var(--paper2); }
-
+ 
 /* SKILLS */
 #skills { background: var(--paper2); }
 .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
@@ -244,13 +238,46 @@ section { padding: 6rem 2.5rem; }
 }
 .skill-item:last-child { border-bottom: none; }
 .skill-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
-
+ 
 /* CONTACT */
 .contact-wrap {
   display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
 }
 .contact-text .section-title { margin-bottom: 1rem; }
 .contact-text p { font-size: 1rem; color: var(--ink2); line-height: 1.75; margin-bottom: 2rem; }
+ 
+/* ── Contact action buttons ── */
+.contact-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+ 
+/* Resume button — ghost style matching the site */
+.btn-resume {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.75rem 1.75rem;
+  border-radius: 6px;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1.5px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  transition: all .2s;
+}
+.btn-resume:hover {
+  border-color: var(--accent);
+  background: var(--accent2);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+ 
 .contact-links { display: flex; flex-direction: column; gap: 0.75rem; }
 .contact-link {
   display: flex; align-items: center; gap: 12px;
@@ -265,26 +292,24 @@ section { padding: 6rem 2.5rem; }
   display: flex; align-items: center; justify-content: center; font-size: 1rem;
   flex-shrink: 0;
 }
-/* Ensure SVG fills icon container */
 .contact-link-icon svg { width: 20px; height: 20px; }
-
 .contact-link-label { font-size: 0.75rem; color: var(--ink3); }
 .contact-link-value { font-size: 0.875rem; font-weight: 500; }
-
+ 
 /* FOOTER */
 footer {
   background: var(--ink); color: rgba(255,255,255,0.5);
   padding: 2rem 2.5rem; text-align: center; font-size: 0.825rem;
 }
 footer span { color: rgba(255,255,255,0.8); }
-
+ 
 /* ANIMATIONS */
 .fade-up {
   opacity: 0; transform: translateY(24px);
   transition: opacity .6s ease, transform .6s ease;
 }
 .fade-up.visible { opacity: 1; transform: translateY(0); }
-
+ 
 /* RESPONSIVE */
 @media (max-width: 768px) {
   nav { padding: 1rem 1.25rem; }
@@ -294,7 +319,6 @@ footer span { color: rgba(255,255,255,0.8); }
   .hero-card { display: none; }
   section { padding: 4rem 1.25rem; }
   
-  /* Reset About layout to a single column on mobile */
   .about-grid { 
     grid-template-areas: 
       "photo"
@@ -308,18 +332,19 @@ footer span { color: rgba(255,255,255,0.8); }
   .contact-wrap { grid-template-columns: 1fr; gap: 2rem; }
   .projects-grid { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr; }
+  .contact-actions { flex-direction: column; align-items: flex-start; }
 }
 </style>
 </head>
 <body>
-
+ 
 <nav>
   <a href="#" class="nav-logo">Shoafzal Shomuhidov</a>
   <ul class="nav-links">
-    <li><a href="#about" data-en="About" data-uz="Men haqimda">About</a></li>
+    <li><a href="#about" data-en="About" data-uz="Haqida">About</a></li>
     <li><a href="#projects" data-en="Projects" data-uz="Loyihalar">Projects</a></li>
     <li><a href="#skills" data-en="Skills" data-uz="Ko'nikmalar">Skills</a></li>
-    <li><a href="#contact" data-en="Contact" data-uz="Bog'lanish">Contact</a></li>
+    <li><a href="#contact" data-en="Contact" data-uz="Aloqa">Contact</a></li>
   </ul>
   <div style="display:flex;gap:.6rem;align-items:center;">
     <button onclick="setLang('en')" id="btn-en" class="btn btn-ghost" style="padding:.5rem .9rem;font-size:.8rem;font-weight:600;">EN</button>
@@ -327,12 +352,12 @@ footer span { color: rgba(255,255,255,0.8); }
     <a href="https://github.com/ShoafzalDataAnalyst" class="btn btn-primary" target="_blank" style="padding:.6rem 1.2rem;font-size:.8rem;" data-en="GitHub ↗" data-uz="GitHub ↗">GitHub ↗</a>
   </div>
 </nav>
-
+ 
 <section class="hero" id="home">
   <div class="hero-grid">
     <div>
-      <h1 data-en="Turning raw data into<br><em>clear decisions</em>" data-uz="Xom ma'lumotlarni<br><em>aniq qarorlarga</em> aylashtiraman">Turning raw data into<br><em>clear decisions</em></h1>
-      <p class="hero-desc" data-en="I build ETL pipelines, interactive dashboards, and statistical analyses that answer real business questions. Five portfolio projects — from job market analysis to urban safety reporting — built end-to-end." data-uz="Men real biznes savollariga javob beradigan ETL quvurlari, interaktiv dashboardlar va statistik tahlillar yarataman. Ish bozori tahlilidan shahar xavfsizligi hisobotlarigacha — beshta portfolio loyiha, boshidan oxirigacha qurilgan.">
+      <h1 data-en="Turning raw data into<br><em>clear decisions</em>" data-uz="Xom ma'lumotlardan<br><em>aniq xulosalar</em> chiqaraman">Turning raw data into<br><em>clear decisions</em></h1>
+      <p class="hero-desc" data-en="I build ETL pipelines, interactive dashboards, and statistical analyses that answer real business questions. Five portfolio projects — from job market analysis to urban safety reporting — built end-to-end." data-uz="Men ETL quvurlari, interaktiv dashboardlar va statistik tahlillar yarataman — barchasi real biznes savollariga javob beradi. Ish bozori tahlilidan shahar xavfsizligi hisobotlarigacha — beshta portfolio loyihasi boshidan oxirigacha amalga oshirilgan.">
         I build ETL pipelines, interactive dashboards, and statistical analyses that answer real business questions. Five portfolio projects — from job market analysis to urban safety reporting — built end-to-end.
       </p>
       <div class="hero-btns">
@@ -343,11 +368,11 @@ footer span { color: rgba(255,255,255,0.8); }
     <div class="hero-card fade-up">
       <div class="hero-stat">
         <div class="hero-stat-num">5</div>
-        <div class="hero-stat-label" data-en="Portfolio projects built end-to-end" data-uz="Boshidan oxirigacha qurilgan portfolio loyihalar">Portfolio projects built end-to-end</div>
+        <div class="hero-stat-label" data-en="Portfolio projects built end-to-end" data-uz="Boshidan oxirigacha yaratilgan portfolio loyihalari">Portfolio projects built end-to-end</div>
       </div>
       <div class="hero-stat">
         <div class="hero-stat-num">269K+</div>
-        <div class="hero-stat-label" data-en="Transactions analyzed in Power BI" data-uz="Power BI da tahlil qilingan tranzaksiyalar">Transactions analyzed in Power BI</div>
+        <div class="hero-stat-label" data-en="Transactions analyzed in Power BI" data-uz="Power BI da tahlil qilingan tranzaksiyalar soni">Transactions analyzed in Power BI</div>
       </div>
       <div class="hero-stat">
         <div class="hero-stat-num">22K+</div>
@@ -355,38 +380,38 @@ footer span { color: rgba(255,255,255,0.8); }
       </div>
       <div class="hero-stat">
         <div class="hero-stat-num">24</div>
-        <div class="hero-stat-label" data-en="DAX measures written from scratch" data-uz="Noldan yozilgan DAX o'lchov ko'rsatkichlari">DAX measures written from scratch</div>
+        <div class="hero-stat-label" data-en="DAX measures written from scratch" data-uz="Noldan yozilgan DAX o'lchov formulalari">DAX measures written from scratch</div>
       </div>
     </div>
   </div>
 </section>
-
+ 
 <section id="about">
   <div class="container">
     <div class="about-grid">
       
       <div class="about-left"></div>
-
+ 
       <div class="about-text-block fade-up">
         <div class="section-tag" data-en="About me" data-uz="Men haqimda">About me</div>
-        <h2 class="section-title" data-en="Data analyst who builds, not just analyzes" data-uz="Faqat tahlil qilmay, quradigan ma'lumotlar tahlilchisi">Data analyst who builds, not just analyzes</h2>
-        <p data-en="I completed a 7-month intensive program in Python, SQL, and Power BI at Najot Ta'lim, and I am currently studying Business Information Systems at Westminster University in Tashkent (expected 2027)." data-uz="Men Najot Ta'limda Python, SQL va Power BI bo'yicha 7 oylik intensiv dasturni tugatdim va hozirda Toshkentdagi Westminster universitetida Biznes axborot tizimlari yo'nalishida tahsil olmoqdaman (2027-yilda tugatish kutilmoqda).">
+        <h2 class="section-title" data-en="Data analyst who builds, not just analyzes" data-uz="Faqat tahlil qilmay, yechim quradigan ma'lumotlar tahlilchisi">Data analyst who builds, not just analyzes</h2>
+        <p data-en="I completed a 7-month intensive program in Python, SQL, and Power BI at Najot Ta'lim, and I am currently studying Business Information Systems at Westminster University in Tashkent (expected 2027)." data-uz="Najot Ta'limda Python, SQL va Power BI yo'nalishlarida 7 oylik intensiv kursni muvaffaqiyatli tamomlladim. Hozirda Toshkentdagi Westminster universiteti Biznes axborot tizimlari dasturida tahsil olmoqdaman (2027-yil bitirish rejalashtirilgan).">
           I completed a 7-month intensive program in Python, SQL, and Power BI at Najot Ta'lim, and I am currently studying Business Information Systems at Westminster University in Tashkent (expected 2027).
         </p>
-        <p data-en="My projects go beyond toy datasets — I built a production ETL pipeline pulling real job market data from hh.uz via API, deployed a live Streamlit app analyzing urban mobility reports, and created a full star-schema BI dashboard across 269,720 retail transactions." data-uz="Mening loyihalarim o'quv datasetlaridan tashqariga chiqadi — men hh.uz dan API orqali real ish bozori ma'lumotlarini tortadigan ishlab chiqarish ETL quvuri qurdim, shahar harakatchanligi hisobotlarini tahlil qiladigan jonli Streamlit ilovasini joylabdim va 269,720 chakana savdo tranzaksiyasini qamrab oluvchi to'liq yulduz sxemali BI dashboardini yaratdim.">
+        <p data-en="My projects go beyond toy datasets — I built a production ETL pipeline pulling real job market data from hh.uz via API, deployed a live Streamlit app analyzing urban mobility reports, and created a full star-schema BI dashboard across 269,720 retail transactions." data-uz="Loyihalarim o'quv datasetlari bilan cheklanmaydi — hh.uz API'sidan real ish bozori ma'lumotlarini tortuvchi ishlab chiqarish darajasidagi ETL quvuri yaratdim, shahar harakatchanligi hisobotlarini tahlil qiluvchi Streamlit ilovasini joyladim va 269 720 ta chakana savdo tranzaksiyasini qamrab oluvchi yulduz sxemali to'liq BI dashboard ishlab chiqdim.">
           My projects go beyond toy datasets — I built a production ETL pipeline pulling real job market data from hh.uz via API, deployed a live Streamlit app analyzing urban mobility reports, and created a full star-schema BI dashboard across 269,720 retail transactions.
         </p>
-        <p data-en="Two years of e-commerce experience at Rizesport.uz gave me real business context: I know what questions managers actually need answered from data." data-uz="Rizesport.uz da ikki yillik elektron tijorat tajribasi menga real biznes kontekstini berdi: men menejerlar ma'lumotlardan qanday savollarga javob kerakligini bilaman.">
+        <p data-en="Two years of e-commerce experience at Rizesport.uz gave me real business context: I know what questions managers actually need answered from data." data-uz="Rizesport.uz da ikki yillik elektron tijorat tajribasi menga biznes muhitini chuqur tushunish imkonini berdi: menejerlar ma'lumotlardan qanday savollarga javob kutishini yaxshi bilaman.">
           Two years of e-commerce experience at Rizesport.uz gave me real business context: I know what questions managers actually need answered from data.
         </p>
       </div>
-
+ 
       <div class="about-facts-block fade-up">
         <div class="fact">
           <div class="fact-icon">🎓</div>
           <div>
             <div class="fact-label" data-en="Education" data-uz="Ta'lim">Education</div>
-            <div class="fact-value" data-en="BSc Business Info Systems · Westminster Univ. Tashkent · 2027" data-uz="Biznes axborot tizimlari · Westminster Univ. Toshkent · 2027">BSc Business Info Systems · Westminster Univ. Tashkent · 2027</div>
+            <div class="fact-value" data-en="BSc Business Info Systems · Westminster Univ. Tashkent · 2027" data-uz="Biznes axborot tizimlari (BSc) · Westminster Univ. Toshkent · 2027">BSc Business Info Systems · Westminster Univ. Tashkent · 2027</div>
           </div>
         </div>
         <div class="about-facts-block fade-up">
@@ -400,37 +425,37 @@ footer span { color: rgba(255,255,255,0.8); }
         <div class="fact">
           <div class="fact-icon">💼</div>
           <div>
-            <div class="fact-label" data-en="Experience" data-uz="Tajriba">Experience</div>
-            <div class="fact-value" data-en="E-commerce Assistant · Rizesport.uz · 2023–2025" data-uz="Elektron tijorat yordamchisi · Rizesport.uz · 2023–2025">E-commerce Assistant · Rizesport.uz · 2023–2025</div>
+            <div class="fact-label" data-en="Experience" data-uz="Ish tajribasi">Experience</div>
+            <div class="fact-value" data-en="E-commerce Assistant · Rizesport.uz · 2023–2025" data-uz="Elektron tijorat bo'yicha yordamchi · Rizesport.uz · 2023–2025">E-commerce Assistant · Rizesport.uz · 2023–2025</div>
           </div>
         </div>
         <div class="fact">
           <div class="fact-icon">🌐</div>
           <div>
             <div class="fact-label" data-en="Languages" data-uz="Tillar">Languages</div>
-            <div class="fact-value" data-en="English B2 (IELTS 6.0) · Uzbek Native" data-uz="Ingliz tili B2 (IELTS 6.0) · O'zbek ona tili">English B2 (IELTS 6.0) · Uzbek Native</div>
+            <div class="fact-value" data-en="English B2 (IELTS 6.0) · Uzbek Native" data-uz="Ingliz tili B2 (IELTS 6.0) · O'zbek tili (ona tili)">English B2 (IELTS 6.0) · Uzbek Native</div>
           </div>
         </div>
         <div class="fact">
           <div class="fact-icon">📍</div>
           <div>
             <div class="fact-label" data-en="Location" data-uz="Joylashuv">Location</div>
-            <div class="fact-value" data-en="Tashkent, Uzbekistan · Open to remote" data-uz="Toshkent, O'zbekiston · Masofaviy ishga ochiq">Tashkent, Uzbekistan · Open to remote</div>
+            <div class="fact-value" data-en="Tashkent, Uzbekistan · Open to remote" data-uz="Toshkent, O'zbekiston · Masofaviy ish formatiga ochiq">Tashkent, Uzbekistan · Open to remote</div>
           </div>
         </div>
       </div>
-
+ 
     </div>
   </div>
 </section>
-
+ 
 <section id="projects">
   <div class="container">
     <div class="section-tag" data-en="Portfolio" data-uz="Portfolio">Portfolio</div>
     <h2 class="section-title" data-en="Projects" data-uz="Loyihalar">Projects</h2>
-    <p class="section-sub" data-en="Five end-to-end projects — every line of code written and understood." data-uz="Beshta to'liq loyiha — har bir kod qatori yozilgan va tushunilgan.">Five end-to-end projects — every line of code written and understood.</p>
+    <p class="section-sub" data-en="Five end-to-end projects — every line of code written and understood." data-uz="Beshta to'liq loyiha — har bir kod qatori mustaqil yozilgan va chuqur o'rganilgan.">Five end-to-end projects — every line of code written and understood.</p>
     <div class="projects-grid">
-
+ 
       <div class="project-card fade-up">
         <div class="project-thumb thumb-hh" style="padding:0;">
             <img src="hh_screenshot.png" alt="HeadHunter dashboard"
@@ -438,8 +463,8 @@ footer span { color: rgba(255,255,255,0.8); }
             <span class="project-thumb-label">ETL · API · Power BI</span>
         </div>
         <div class="project-body">
-          <div class="project-title" data-en="HeadHunter Vacancy Collector" data-uz="HeadHunter bo'sh ish o'rinlari yig'uvchi">HeadHunter Vacancy Collector</div>
-          <p class="project-desc" data-en="Production-grade ETL pipeline collecting Data Analyst job vacancies from hh.uz via REST API. Loads into normalized SQL Server schema (5 tables). Power BI dashboard reveals SQL, Python and Power BI as top 3 demanded skills." data-uz="hh.uz dan REST API orqali Data Analyst ish bo'sh o'rinlarini to'plovchi ishlab chiqarish darajasidagi ETL quvuri. Normallashtirilgan SQL Server sxemasiga (5 jadval) yuklanadi.">Production-grade ETL pipeline collecting Data Analyst job vacancies from hh.uz via REST API. Loads into normalized SQL Server schema (5 tables).</p>
+          <div class="project-title" data-en="HeadHunter Vacancy Collector" data-uz="HeadHunter Vakansiyalar Yig'uvchisi">HeadHunter Vacancy Collector</div>
+          <p class="project-desc" data-en="Production-grade ETL pipeline collecting Data Analyst job vacancies from hh.uz via REST API. Loads into normalized SQL Server schema (5 tables). Power BI dashboard reveals SQL, Python and Power BI as top 3 demanded skills." data-uz="hh.uz saytidan REST API orqali Data Analyst vakansiyalarini to'plovchi ishlab chiqarish darajasidagi ETL quvuri. Ma'lumotlar normallashtirilgan SQL Server sxemasiga (5 jadval) yuklanadi. Power BI dashboardi SQL, Python va Power BI eng ko'p talab qilinadigan 3 ta ko'nikma ekanligini ko'rsatadi.">Production-grade ETL pipeline collecting Data Analyst job vacancies from hh.uz via REST API. Loads into normalized SQL Server schema (5 tables).</p>
           <div class="tech-tags">
             <span class="tech-tag">Python</span><span class="tech-tag">SQL Server</span><span class="tech-tag">Power BI</span><span class="tech-tag">REST API</span><span class="tech-tag">ETL</span><span class="tech-tag">Pandas</span>
           </div>
@@ -448,7 +473,7 @@ footer span { color: rgba(255,255,255,0.8); }
           </div>
         </div>
       </div>
-
+ 
       <div class="project-card fade-up">
         <div class="project-thumb thumb-urban" style="padding:0;">
           <img src="urban_screenshot.png" alt="Urban Mobility Dashboard"
@@ -456,18 +481,18 @@ footer span { color: rgba(255,255,255,0.8); }
           <span class="project-thumb-label">Streamlit · Live App</span>
         </div>
         <div class="project-body">
-          <div class="project-title" data-en="Urban Mobility & Safety Dashboard" data-uz="Shahar harakatchanligi va xavfsizlik paneli">Urban Mobility & Safety Dashboard</div>
-          <p class="project-desc" data-en="Interactive Streamlit dashboard analyzing 22,000+ urban safety reports. Full data wrangling pipeline with spatial joins assigning reports to city districts." data-uz="22,000+ dan ortiq shahar xavfsizligi hisobotlarini tahlil qiluvchi interaktiv Streamlit dashboardi.">Interactive Streamlit dashboard analyzing 22,000+ urban safety reports. Full data wrangling pipeline with spatial joins.</p>
+          <div class="project-title" data-en="Urban Mobility & Safety Dashboard" data-uz="Shahar Harakatchanligi va Xavfsizlik Paneli">Urban Mobility & Safety Dashboard</div>
+          <p class="project-desc" data-en="Interactive Streamlit dashboard analyzing 22,000+ urban safety reports. Full data wrangling pipeline with spatial joins assigning reports to city districts." data-uz="22 000 dan ortiq shahar xavfsizligi hisobotini tahlil qiluvchi interaktiv Streamlit dashboardi. Hisobotlarni shahar tumanlari bo'yicha ajratuvchi fazoviy birlashtirish (spatial join) bilan to'liq ma'lumot qayta ishlash quvuri.">Interactive Streamlit dashboard analyzing 22,000+ urban safety reports. Full data wrangling pipeline with spatial joins.</p>
           <div class="tech-tags">
             <span class="tech-tag">Python</span><span class="tech-tag">Streamlit</span><span class="tech-tag">Plotly</span><span class="tech-tag">GeoPandas</span><span class="tech-tag">Pandas</span>
           </div>
           <div class="project-links">
             <a href="https://github.com/ShoafzalDataAnalyst/urban-mobility-dashboard" class="proj-link proj-link-primary" target="_blank" data-en="GitHub ↗" data-uz="GitHub ↗">GitHub ↗</a>
-            <a href="https://urban-mobility-dashboard-d7xngh3ylfsdy78kqviufj.streamlit.app/" class="proj-link proj-link-ghost" target="_blank" data-en="Live Demo ↗" data-uz="Jonli demo ↗">Live Demo ↗</a>
+            <a href="https://urban-mobility-dashboard-d7xngh3ylfsdy78kqviufj.streamlit.app/" class="proj-link proj-link-ghost" target="_blank" data-en="Live Demo ↗" data-uz="Jonli namoyish ↗">Live Demo ↗</a>
           </div>
         </div>
       </div>
-
+ 
       <div class="project-card fade-up">
         <div class="project-thumb thumb-maven" style="padding:0;">
             <img src="maven_screenshot.png" alt="Maven Market Dashboard"
@@ -476,7 +501,7 @@ footer span { color: rgba(255,255,255,0.8); }
         </div>
         <div class="project-body">
           <div class="project-title" data-en="Maven Market BI Dashboard" data-uz="Maven Market BI Dashboardi">Maven Market BI Dashboard</div>
-          <p class="project-desc" data-en="Business intelligence dashboard across 269,720 transactions for a multi-national grocery chain. Star schema across 7 tables, 24 DAX measures." data-uz="Ko'p millatli oziq-ovqat zanjiri uchun 269,720 tranzaksiya bo'yicha biznes razvedka dashboardi.">Business intelligence dashboard across 269,720 transactions for a multi-national grocery chain. Star schema across 7 tables.</p>
+          <p class="project-desc" data-en="Business intelligence dashboard across 269,720 transactions for a multi-national grocery chain. Star schema across 7 tables, 24 DAX measures." data-uz="Ko'p mamlakatli oziq-ovqat savdo tarmog'i uchun 269 720 ta tranzaksiyani qamrab oluvchi biznes razvedka dashboardi. 7 jadvaldan iborat yulduz sxemasi va 24 ta DAX formulasi.">Business intelligence dashboard across 269,720 transactions for a multi-national grocery chain. Star schema across 7 tables.</p>
           <div class="tech-tags">
             <span class="tech-tag">Power BI</span><span class="tech-tag">DAX</span><span class="tech-tag">Data Modeling</span><span class="tech-tag">Star Schema</span>
           </div>
@@ -485,7 +510,7 @@ footer span { color: rgba(255,255,255,0.8); }
           </div>
         </div>
       </div>
-
+ 
       <div class="project-card fade-up">
         <div class="project-thumb thumb-titanic" style="padding:0;">
             <img src="titanic_screenshot.png" alt="Titanic Analysis"
@@ -493,8 +518,8 @@ footer span { color: rgba(255,255,255,0.8); }
           <span class="project-thumb-label">EDA · Statistics</span>
         </div>
         <div class="project-body">
-          <div class="project-title" data-en="Titanic Survival Analysis" data-uz="Titanic yashash tahlili">Titanic Survival Analysis</div>
-          <p class="project-desc" data-en="Statistical analysis of 891 Titanic passengers uncovering survival patterns. Chi-square tests and t-tests validated key findings." data-uz="891 Titanic yo'lovchisining yashash naqshlarini ochib beruvchi statistik tahlil.">Statistical analysis of 891 Titanic passengers uncovering survival patterns. Chi-square tests and t-tests validated findings.</p>
+          <div class="project-title" data-en="Titanic Survival Analysis" data-uz="Titanic: Omon Qolish Tahlili">Titanic Survival Analysis</div>
+          <p class="project-desc" data-en="Statistical analysis of 891 Titanic passengers uncovering survival patterns. Chi-square tests and t-tests validated key findings." data-uz="891 ta Titanic yo'lovchisi ma'lumotlari asosida omon qolish qonuniyatlarini aniqlashga yo'naltirilgan statistik tahlil. Asosiy xulosalar xі-kvadrat va t-test sinovlari orqali tasdiqlangan.">Statistical analysis of 891 Titanic passengers uncovering survival patterns. Chi-square tests and t-tests validated findings.</p>
           <div class="tech-tags">
             <span class="tech-tag">Python</span><span class="tech-tag">Pandas</span><span class="tech-tag">Matplotlib</span><span class="tech-tag">Statistics</span><span class="tech-tag">EDA</span>
           </div>
@@ -503,19 +528,19 @@ footer span { color: rgba(255,255,255,0.8); }
           </div>
         </div>
       </div>
-
+ 
     </div>
   </div>
 </section>
-
+ 
 <section id="skills">
   <div class="container">
     <div class="section-tag" data-en="Technical skills" data-uz="Texnik ko'nikmalar">Technical skills</div>
-    <h2 class="section-title" data-en="What I work with" data-uz="Nima bilan ishlayman">What I work with</h2>
-    <p class="section-sub" data-en="Tools and technologies used across real projects — not just listed, actually applied." data-uz="Real loyihalarda qo'llangan asboblar va texnologiyalar — faqat ro'yxatda emas, amalda ishlatilgan.">Tools and technologies used across real projects — not just listed, actually applied.</p>
+    <h2 class="section-title" data-en="What I work with" data-uz="Qo'llagan texnologiyalarim">What I work with</h2>
+    <p class="section-sub" data-en="Tools and technologies used across real projects — not just listed, actually applied." data-uz="Real loyihalarda qo'llagan asboblar va texnologiyalar — faqat ro'yxat emas, amalda sinab ko'rilgan.">Tools and technologies used across real projects — not just listed, actually applied.</p>
     <div class="skills-grid fade-up">
       <div class="skill-group">
-        <div class="skill-group-title" data-en="Languages & Libraries" data-uz="Tillar va kutubxonalar">Languages & Libraries</div>
+        <div class="skill-group-title" data-en="Languages & Libraries" data-uz="Dasturlash tillari va kutubxonalar">Languages & Libraries</div>
         <div class="skill-item"><span class="skill-dot"></span>Python</div>
         <div class="skill-item"><span class="skill-dot"></span>Pandas</div>
         <div class="skill-item"><span class="skill-dot"></span>NumPy</div>
@@ -541,80 +566,117 @@ footer span { color: rgba(255,255,255,0.8); }
     </div>
   </div>
 </section>
-
+ 
 <section id="contact">
   <div class="container">
     <div class="contact-wrap">
       <div class="contact-text fade-up">
-        <div class="section-tag" data-en="Contact" data-uz="Bog'lanish">Contact</div>
-        <h2 class="section-title" data-en="Let's work together" data-uz="Birgalikda ishlaymiz">Let's work together</h2>
-        <p data-en="I'm actively looking for junior Data Analyst roles. If you have an opportunity or just want to talk data — reach out." data-uz="Men faol ravishda junior Data Analyst lavozimlarini qidirmoqdaman.">I'm actively looking for junior Data Analyst roles. If you have an opportunity or just want to talk data — reach out.</p>
-        <a href="mailto:shomuhidov.shoafzal@gmail.com" class="btn btn-primary" data-en="Send an email ↗" data-uz="Email yuborish ↗">Send an email ↗</a>
+        <div class="section-tag" data-en="Contact" data-uz="Aloqa">Contact</div>
+        <h2 class="section-title" data-en="Let's work together" data-uz="Hamkorlik qilaylik">Let's work together</h2>
+        <p data-en="I'm actively looking for junior Data Analyst roles. If you have an opportunity or just want to talk data — reach out." data-uz="Hozirda junior Data Analyst lavozimini faol qidirmoqdaman. Agar ish taklifi bo'lsa yoki ma'lumotlar tahlili mavzusida suhbatlashmoqchi bo'lsangiz — murojaat qiling.">I'm actively looking for junior Data Analyst roles. If you have an opportunity or just want to talk data — reach out.</p>
+ 
+        <!-- ── Action buttons ── -->
+        <div class="contact-actions">
+          <a href="mailto:shomuhidov.shoafzal@gmail.com" class="btn btn-primary"
+             data-en="Send an email ↗" data-uz="Xat yuborish ↗">Send an email ↗</a>
+ 
+          <!-- Resume button: changes href & download filename based on active language -->
+          <a id="resume-btn" href="resume_en.pdf" download="Shoafzal_Shomuhidov_Resume_EN.pdf"
+             class="btn-resume"
+             data-en="Download Resume ↓" data-uz="Rezyumeni yuklab olish ↓">
+            Download Resume ↓
+          </a>
+        </div>
       </div>
+ 
       <div class="contact-links fade-up">
+        <!-- Email -->
         <a href="mailto:shomuhidov.shoafzal@gmail.com" class="contact-link">
           <div class="contact-link-icon">✉</div>
           <div>
-            <div class="contact-link-label" data-en="Email" data-uz="Email">Email</div>
-            <div class="contact-link-value">shomuhidov.shoafzal@gmail.com</div>
+            <div class="contact-link-value" style="font-size:0.95rem;">Email</div>
           </div>
         </a>
-        <a href="https://www.linkedin.com/in/shoafzal-shomuhidov-15b647389/" class="contact-link" target="_blank">
+ 
+        <!-- LinkedIn — no username shown -->
+        <a href="https://www.linkedin.com/in/shoafzal-shomuhidov-15b647389/" class="contact-link" target="_blank" rel="noopener">
           <div class="contact-link-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
           </div>
           <div>
-            <div class="contact-link-label" data-en="LinkedIn" data-uz="LinkedIn">LinkedIn</div>
-            <div class="contact-link-value">shoafzal-shomuhidov</div>
+            <div class="contact-link-value" style="font-size:0.95rem;">LinkedIn</div>
           </div>
         </a>
-        <a href="https://github.com/ShoafzalDataAnalyst" class="contact-link" target="_blank">
+ 
+        <!-- GitHub — no username shown -->
+        <a href="https://github.com/ShoafzalDataAnalyst" class="contact-link" target="_blank" rel="noopener">
           <div class="contact-link-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
           </div>
           <div>
-            <div class="contact-link-label" data-en="GitHub" data-uz="GitHub">GitHub</div>
-            <div class="contact-link-value">ShoafzalDataAnalyst</div>
+            <div class="contact-link-value" style="font-size:0.95rem;">GitHub</div>
           </div>
         </a>
-        <a href="https://t.me/Shoafzal05" class="contact-link" target="_blank">
+ 
+        <!-- Telegram — no username shown -->
+        <a href="https://t.me/Shoafzal05" class="contact-link" target="_blank" rel="noopener">
           <div class="contact-link-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#0088cc"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.562 8.161c-.18.717-.962 4.084-1.362 5.441-.168.56-.493 1.034-1.034 1.034-.145 0-.304-.016-.451-.048-1.008-.211-1.631-.581-2.433-1.121-.715-.481-1.217-1.109-1.217-1.109 0 0-.012-.016-.012-.032-.013-.032.012-.048.012-.048s1.616-1.503 2.766-2.58c.243-.227.48-.456.702-.681.332-.331.542-.716.542-1.137 0-.048-.004-.096-.012-.145-.052-.303-.284-.539-.621-.539-.129 0-.258.032-.387.097l-7.074 4.41c-.604.375-1.112.569-1.524.569-.413 0-.693-.194-1.04-.337-.504-.209-1.033-.377-1.428-.508-.433-.143-.765-.219-.765-.568 0-.348.431-.536.81-.726 1.082-.544 6.746-2.855 8.134-3.415.823-.331 1.706-.525 2.585-.525 1.155 0 2.235.409 2.348 1.714.004.053.006.107.006.162z"/></svg>
           </div>
           <div>
-            <div class="contact-link-label" data-en="Telegram" data-uz="Telegram">Telegram</div>
-            <div class="contact-link-value">@Shoafzal05</div>
+            <div class="contact-link-value" style="font-size:0.95rem;">Telegram</div>
           </div>
         </a>
       </div>
     </div>
   </div>
 </section>
-
+ 
 <footer>
-  <p data-en="Built by <span>Shoafzal Shomuhidov</span> · Data Analyst · Tashkent, Uzbekistan · 2026" data-uz="<span>Shoafzal Shomuhidov</span> tomonidan yaratilgan · Ma'lumotlar tahlilchisi · Toshkent, O'zbekiston · 2026">Built by <span>Shoafzal Shomuhidov</span> · Data Analyst · Tashkent, Uzbekistan · 2026</p>
+  <p data-en="Built by <span>Shoafzal Shomuhidov</span> · Data Analyst · Tashkent, Uzbekistan · 2026" data-uz="<span>Shoafzal Shomuhidov</span> tomonidan yaratildi · Ma'lumotlar tahlilchisi · Toshkent, O'zbekiston · 2026">Built by <span>Shoafzal Shomuhidov</span> · Data Analyst · Tashkent, Uzbekistan · 2026</p>
 </footer>
-
+ 
 <script>
 let currentLang = 'en';
-
+ 
+// Resume file mapping: language → { file, downloadName }
+const RESUME_FILES = {
+  en: { file: 'resume_en.pdf', name: 'Shoafzal_Shomuhidov_Resume_EN.pdf' },
+  uz: { file: 'resume_uz.pdf', name: 'Shoafzal_Shomuhidov_Resume_UZ.pdf' }
+};
+ 
+function updateResumeBtn(lang) {
+  const btn = document.getElementById('resume-btn');
+  if (!btn) return;
+  const r = RESUME_FILES[lang];
+  btn.href     = r.file;
+  btn.download = r.name;
+}
+ 
 function setLang(lang) {
   currentLang = lang;
-  document.getElementById('btn-en').style.fontWeight = lang === 'en' ? '700' : '400';
-  document.getElementById('btn-uz').style.fontWeight = lang === 'uz' ? '700' : '400';
-  document.getElementById('btn-en').style.borderColor = lang === 'en' ? 'var(--accent)' : 'var(--line)';
-  document.getElementById('btn-uz').style.borderColor = lang === 'uz' ? 'var(--accent)' : 'var(--line)';
-  document.getElementById('btn-en').style.color = lang === 'en' ? 'var(--accent)' : 'var(--ink3)';
-  document.getElementById('btn-uz').style.color = lang === 'uz' ? 'var(--accent)' : 'var(--ink3)';
-
+ 
+  // Active button styles
+  document.getElementById('btn-en').style.fontWeight   = lang === 'en' ? '700' : '400';
+  document.getElementById('btn-uz').style.fontWeight   = lang === 'uz' ? '700' : '400';
+  document.getElementById('btn-en').style.borderColor  = lang === 'en' ? 'var(--accent)' : 'var(--line)';
+  document.getElementById('btn-uz').style.borderColor  = lang === 'uz' ? 'var(--accent)' : 'var(--line)';
+  document.getElementById('btn-en').style.color        = lang === 'en' ? 'var(--accent)' : 'var(--ink3)';
+  document.getElementById('btn-uz').style.color        = lang === 'uz' ? 'var(--accent)' : 'var(--ink3)';
+ 
+  // Translate all data-en / data-uz elements
   document.querySelectorAll('[data-en]').forEach(el => {
     const val = el.getAttribute('data-' + lang);
     if (val) el.innerHTML = val;
   });
-
+ 
+  // Switch resume button target
+  updateResumeBtn(lang);
+ 
   document.documentElement.lang = lang === 'uz' ? 'uz' : 'en';
 }
-
+ 
+// Fade-in on scroll
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry, i) => {
     if (entry.isIntersecting) {
@@ -623,7 +685,7 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
+ 
 setLang('en');
 </script>
 </body>
