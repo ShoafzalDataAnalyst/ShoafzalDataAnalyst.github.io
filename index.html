@@ -398,8 +398,8 @@ footer span { color: rgba(255,255,255,0.8); }
         <p data-en="I completed a 7-month intensive program in Python, SQL, and Power BI at Najot Ta'lim, and I am currently studying Business Information Systems at Westminster University in Tashkent (expected 2027)." data-uz="Najot Ta'limda Python, SQL va Power BI yo'nalishlarida 7 oylik intensiv kursni muvaffaqiyatli tamomlladim. Hozirda Toshkentdagi Westminster universiteti Biznes axborot tizimlari dasturida tahsil olmoqdaman (2027-yil bitirish rejalashtirilgan).">
           I completed a 7-month intensive program in Python, SQL, and Power BI at Najot Ta'lim, and I am currently studying Business Information Systems at Westminster University in Tashkent (expected 2027).
         </p>
-        <p data-en="My projects go beyond toy datasets — I built a production ETL pipeline pulling real job market data from hh.uz via API, deployed a live Streamlit app analyzing urban mobility reports, and created a full star-schema BI dashboard across 269,720 retail transactions." data-uz="Loyihalarim o'quv datasetlari bilan cheklanmaydi — hh.uz API'sidan real ish bozori ma'lumotlarini tortuvchi ishlab chiqarish darajasidagi ETL quvuri yaratdim, shahar harakatchanligi hisobotlarini tahlil qiluvchi Streamlit ilovasini joyladim va 269 720 ta chakana savdo tranzaksiyasini qamrab oluvchi yulduz sxemali to'liq BI dashboard ishlab chiqdim.">
-          My projects go beyond toy datasets — I built a production ETL pipeline pulling real job market data from hh.uz via API, deployed a live Streamlit app analyzing urban mobility reports, and created a full star-schema BI dashboard across 269,720 retail transactions.
+        <p data-en="My projects go beyond toy datasets — I built a live, self-updating ETL pipeline pulling real job market data from the Adzuna API across the UK and US, automated end-to-end with GitHub Actions and deployed as a public Streamlit dashboard, and created a full star-schema BI dashboard across 269,720 retail transactions." data-uz="Loyihalarim o'quv datasetlari bilan cheklanmaydi — Adzuna API'sidan Buyuk Britaniya va AQSH bo'yicha real ish bozori ma'lumotlarini tortuvchi, GitHub Actions bilan to'liq avtomatlashtirilgan va ommaviy Streamlit dashboardi sifatida joylashtirilgan jonli ETL quvurini yaratdim, shuningdek 269 720 ta chakana savdo tranzaksiyasini qamrab oluvchi yulduz sxemali to'liq BI dashboard ishlab chiqdim.">
+          My projects go beyond toy datasets — I built a live, self-updating ETL pipeline pulling real job market data from the Adzuna API across the UK and US, automated end-to-end with GitHub Actions and deployed as a public Streamlit dashboard, and created a full star-schema BI dashboard across 269,720 retail transactions.
         </p>
         <p data-en="Two years of e-commerce experience at Rizesport.uz gave me real business context: I know what questions managers actually need answered from data." data-uz="Rizesport.uz da ikki yillik elektron tijorat tajribasi menga biznes muhitini chuqur tushunish imkonini berdi: menejerlar ma'lumotlardan qanday savollarga javob kutishini yaxshi bilaman.">
           Two years of e-commerce experience at Rizesport.uz gave me real business context: I know what questions managers actually need answered from data.
@@ -458,18 +458,19 @@ footer span { color: rgba(255,255,255,0.8); }
  
       <div class="project-card fade-up">
         <div class="project-thumb thumb-hh" style="padding:0;">
-            <img src="hh_screenshot.png" alt="HeadHunter dashboard"
+            <img src="adzuna_dashboard.png" alt="Data Analyst Job Market Dashboard"
                 style="width:100%;height:100%;object-fit:cover;">
-            <span class="project-thumb-label">ETL · API · Power BI</span>
+            <span class="project-thumb-label">ETL · API · Streamlit</span>
         </div>
         <div class="project-body">
-          <div class="project-title" data-en="HeadHunter Vacancy Collector" data-uz="HeadHunter Vakansiyalar Yig'uvchisi">HeadHunter Vacancy Collector</div>
-          <p class="project-desc" data-en="Production-grade ETL pipeline collecting Data Analyst job vacancies from hh.uz via REST API. Loads into normalized SQL Server schema (5 tables). Power BI dashboard reveals SQL, Python and Power BI as top 3 demanded skills." data-uz="hh.uz saytidan REST API orqali Data Analyst vakansiyalarini to'plovchi ishlab chiqarish darajasidagi ETL quvuri. Ma'lumotlar normallashtirilgan SQL Server sxemasiga (5 jadval) yuklanadi. Power BI dashboardi SQL, Python va Power BI eng ko'p talab qilinadigan 3 ta ko'nikma ekanligini ko'rsatadi.">Production-grade ETL pipeline collecting Data Analyst job vacancies from hh.uz via REST API. Loads into normalized SQL Server schema (5 tables).</p>
+          <div class="project-title" data-en="Data Analyst Job Market Dashboard" data-uz="Ma'lumotlar Tahlilchisi Ish Bozori Dashboardi">Data Analyst Job Market Dashboard</div>
+          <p class="project-desc" data-en="Live, self-updating dashboard tracking Data Analyst vacancies across the UK and US. Automated end-to-end with GitHub Actions, collecting 6,800+ postings via the Adzuna API and refreshing the public Streamlit dashboard daily with zero manual work." data-uz="Buyuk Britaniya va AQSH bo'yicha Data Analyst vakansiyalarini kuzatuvchi jonli, o'zi yangilanadigan dashboard. GitHub Actions bilan to'liq avtomatlashtirilgan, Adzuna API orqali 6 800 dan ortiq e'lonni to'playdi va ommaviy Streamlit dashboardini har kuni hech qanday qo'lda ishlovsiz yangilaydi.">Live, self-updating dashboard tracking Data Analyst vacancies across the UK and US. Automated end-to-end with GitHub Actions, collecting 6,800+ postings via the Adzuna API.</p>
           <div class="tech-tags">
-            <span class="tech-tag">Python</span><span class="tech-tag">SQL Server</span><span class="tech-tag">Power BI</span><span class="tech-tag">REST API</span><span class="tech-tag">ETL</span><span class="tech-tag">Pandas</span>
+            <span class="tech-tag">Python</span><span class="tech-tag">SQLite</span><span class="tech-tag">Streamlit</span><span class="tech-tag">GitHub Actions</span><span class="tech-tag">REST API</span><span class="tech-tag">ETL</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/ShoafzalDataAnalyst/HeadHunter-Vacancy-Collector" class="proj-link proj-link-primary" target="_blank" data-en="GitHub ↗" data-uz="GitHub ↗">GitHub ↗</a>
+            <a href="https://github.com/ShoafzalDataAnalyst/Adzuna-Job-Market-Vacancies" class="proj-link proj-link-primary" target="_blank" data-en="GitHub ↗" data-uz="GitHub ↗">GitHub ↗</a>
+            <a href="https://adzuna-job-market-vacancies.streamlit.app/" class="proj-link proj-link-ghost" target="_blank" data-en="Live Demo ↗" data-uz="Jonli namoyish ↗">Live Demo ↗</a>
           </div>
         </div>
       </div>
@@ -559,8 +560,8 @@ footer span { color: rgba(255,255,255,0.8); }
         <div class="skill-group-title" data-en="Data Engineering" data-uz="Ma'lumotlar muhandisligi">Data Engineering</div>
         <div class="skill-item"><span class="skill-dot"></span>ETL Pipelines</div>
         <div class="skill-item"><span class="skill-dot"></span>REST API Integration</div>
-        <div class="skill-item"><span class="skill-dot"></span>SQL Server / MS SQL</div>
-        <div class="skill-item"><span class="skill-dot"></span>Spyder IDE</div>
+        <div class="skill-item"><span class="skill-dot"></span>SQLite / SQL Server</div>
+        <div class="skill-item"><span class="skill-dot"></span>GitHub Actions</div>
         <div class="skill-item"><span class="skill-dot"></span>Git / GitHub</div>
       </div>
     </div>
@@ -581,7 +582,7 @@ footer span { color: rgba(255,255,255,0.8); }
              data-en="Send an email ↗" data-uz="Xat yuborish ↗">Send an email ↗</a>
  
           <!-- Resume button: changes href & download filename based on active language -->
-          <a id="resume-btn" href="resume_en.pdf" download="Shoafzal_Shomuhidov_Resume_EN.pdf"
+          <a id="resume-btn" href="resume_shoafzal.docx" download="Shoafzal_Shomuhidov_Resume_EN.docx"
              class="btn-resume"
              data-en="Download Resume ↓" data-uz="Rezyumeni yuklab olish ↓">
             Download Resume ↓
@@ -641,8 +642,8 @@ let currentLang = 'en';
  
 // Resume file mapping: language → { file, downloadName }
 const RESUME_FILES = {
-  en: { file: 'resume_en.pdf', name: 'Shoafzal_Shomuhidov_Resume_EN.pdf' },
-  uz: { file: 'resume_uz.pdf', name: 'Shoafzal_Shomuhidov_Resume_UZ.pdf' }
+  en: { file: 'resume_shoafzal.docx', name: 'Shoafzal_Shomuhidov_Resume_EN.docx' },
+  uz: { file: 'resume_shoafzal_uz.docx', name: 'Shoafzal_Shomuhidov_Resume_UZ.docx' }
 };
  
 function updateResumeBtn(lang) {
